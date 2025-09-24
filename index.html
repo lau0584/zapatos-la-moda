@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Zapatos — ZapatoStyle</title>
+  <meta name="description" content="Tienda de zapatos moderna — zapatillas, botas, sandalias y más." />
+  <style>
+    :root{
+      --bg:#383837f3;
+      --card:#fdf7f7;
+      --accent:#a1b2ec;
+      --muted:#9b9da1;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --shadow: 0 6px 18px rgba(18,22,30,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#080808}
+
+    /* Header */
+    .header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:transparent;position:sticky;top:0;backdrop-filter: blur(6px);
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff9a9e);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .btn{background:var(--accent);border:none;color:rgb(19, 17, 17);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;padding:48px 28px;align-items:center}
+    .hero-left h1{font-size:38px;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 22px}
+    .search{display:flex;gap:10px}
+    .search input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #0d0e0f}
+
+    .card-hero{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+    .hero-img{width:100%;border-radius:12px;overflow:hidden}
+    .hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+
+    /* Products grid */
+    .container{padding:24px 28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .product{background:var(--card);border-radius:14px;padding:12px;box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease}
+    .product:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(18,22,30,0.12)}
+    .prod-img{height:180px;border-radius:10px;overflow:hidden}
+    .prod-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .prod-info{padding:10px 6px}
+    .prod-title{font-weight:700;margin:0 0 6px}
+    .prod-desc{font-size:13px;color:var(--muted);margin:0 0 10px}
+    .price-row{display:flex;justify-content:space-between;align-items:center}
+    .price{font-weight:800}
+    .small-btn{border:1px solid #e6e8ec;padding:8px 10px;border-radius:10px;background:transparent;cursor:pointer}
+
+    /* Footer */
+    footer{padding:28px;border-top:1px solid #121213;margin-top:28px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;gap:18px;text-align:center}
+      .hero-left{order:2}
+      .hero-img{order:1}
+    }
+
+    /* Tiny utilities */
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#fff1f1,#fff6f6);font-weight:700;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div class="logo">
+  <img src="logo.jpeg"Logo ZapatoStyle" style="width:44px;height:44px;border-radius:10px;object-fit:cover" />
+</div>
+        <div style="font-weight:800">Zapatos la moda </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Calzado moderno y cómodo</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#">Hombre</a>
+      <a href="#">Mujer</a>
+      <a href="#">Novedades</a>
+      <a href="#">Ofertas</a>
+      <button class="btn">Carrito (0)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Calzado que te acompaña cada paso</h1>
+        <p>Encuentra zapatillas, sandalias y calzado deportivo con la mejor calidad. Envíos a todo Colombia.</p>
+        <div class="search" style="margin-bottom:14px">
+          <input type="search" placeholder="Buscar por modelo, color o talla..." />
+          <button class="btn">Buscar</button>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;justify-content:flex-start">
+          <div class="badge">Envío gratis desde $180.000</div>
+          <div style="color:var(--muted);font-weight:600">| 30 días para devolución</div>
+        </div>
+      </div>
+
+      <aside class="card-hero">
+        <div class="hero-img">
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f6b0c088a1b8c6a5e6d03b9b6a1bd4f" alt="zapatillas destacadas" />
+        </div>
+      </aside>
+    </section>
+
+    <section class="container">
+      <h2 style="margin:0 0 12px">Productos populares</h2>
+      <div class="grid">
+
+        <!-- Producto 1 -->
+        <article class="product">
+          <div class="prod-img">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b2b7f3d7f8a1c6f3f1b8a2a9f8e0a1f" alt="Zapatillas blancas" />
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-title">Zapatillas Urbanas</h3>
+            <p class="prod-desc">Comodidad diaria con suela antideslizante y diseño minimalista.</p>
+            <div class="price-row">
+              <div class="price">$149.900</div>
+              <div>
+                <button class="small-btn">Ver</button>
+                <button class="small-btn">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="product">
+          <div class="prod-img">
+            <img src="producto.jpeg" alt="Botas" />
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-title">Teni deportivo Ztride</h3>
+            <p class="prod-desc">Resistentes, sujeción total para largas caminatas.</p>
+            <div class="price-row">
+              <div class="price">$165.900</div>
+              <div>
+                <button class="small-btn">Ver</button>
+                <button class="small-btn">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="product">
+          <div class="prod-img">
+            <img src="pro.jpeg" alt="Sandalias" />
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-title">Zapato noox </h3>
+            <p class="prod-desc">Ligeras y suaves al pisar, perfectas para el dia a dia .</p>
+            <div class="price-row">
+              <div class="price">$200.900</div>
+              <div>
+                <button class="small-btn">Ver</button>
+                <button class="small-btn">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 4 -->
+        <article class="product">
+          <div class="prod-img">
+            <img src="p4.jpeg" alt="Zapatos de vestir" />
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-title">Teni urbano</h3>
+            <p class="prod-desc">Suela de goma antideslizante, perfecto para un dia lluvioso.</p>
+            <div class="price-row">
+              <div class="price">$189.900</div>
+              <div>
+                <button class="small-btn">Ver</button>
+                <button class="small-btn">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Producto 5 -->
+        <article class="product">
+          <div class="prod-img">
+            <img src="p5.jpeg" alt="Zapatillas running" />
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-title">zapato deportivo</h3>
+            <p class="prod-desc">Amortiguación avanzada para corredores exigentes
+                <div class="price-row">
+              <div class="price">$120.900</div>
+              <div>
+                <button class="small-btn">Ver</button>
+                <button class="small-btn">Añadir</button>
+              </div>
+            </div>
+          </div>
+        </article>
